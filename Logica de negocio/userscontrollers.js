@@ -97,3 +97,13 @@ exports.filtrousers = async(req, res) =>{
         res.status(500).json({ error: error.message });
     }
 };
+
+
+exports.obtenerUsuarios = async(req, res) => {
+    try {
+        const usuarios = await pool.query('SELECT * FROM Usuario');
+        res.status(200).json(usuarios.rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
