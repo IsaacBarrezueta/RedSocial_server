@@ -13,7 +13,7 @@ exports.solicitudamistad = async(req, res)=>{
   };
 
 exports.obtenerAmigos = async (req, res) => {
-    const { usuarioID } = req.body;
+    const { usuarioID } = req.query;
     const client = await pool.connect();
     try {
         const query = `
